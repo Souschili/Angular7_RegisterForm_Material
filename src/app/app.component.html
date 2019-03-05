@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="conteiner">
     <div class="form-box">
-      <form class="reg-form" novalidate [formGroup]="myRegForm" >
+      <form class="reg-form" novalidate [formGroup]="myRegForm"  >
           <mat-form-field>
           <input matInput placeholder="Enter email" formControlName="email">
           <mat-hint>Password format user@uaer.az</mat-hint>
@@ -21,6 +21,8 @@
           <mat-hint>Confirm Password</mat-hint>
           <mat-error *ngIf="myRegForm.hasError('passwordsDoNotMatch')" >Password not same</mat-error>
         </mat-form-field>
+        <br>
+        <button mat-raised-button (click)="onSubmit()" color="warn">Register</button>
         <br>
         {{myRegForm.value | json }}
         <div>

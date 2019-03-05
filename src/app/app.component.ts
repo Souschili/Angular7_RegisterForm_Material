@@ -37,7 +37,20 @@ export class AppComponent  implements OnInit {
   ngOnInit(): void {
     this.initForm();
   }
+
+
+  onSubmit() {
+    if ( this.myRegForm.invalid) {
+      return;
+    } else {
+      alert('Registration finish !!');
+    }
+  }
 }
+
+
+
+
 function ConfirmPassword(control: AbstractControl): {[key: string]: boolean} | null {
   const condition = control.get('password').value !== control.get('password2').value;
   return condition ? { passwordsDoNotMatch: true} : null;
